@@ -1,0 +1,23 @@
+{
+  "name": "cy-intercept-example",
+  "version": "1.0.0",
+  "description": "Cypress v6 network examples",
+  "private": true,
+  "scripts": {
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/cy-intercept-example.git"
+  },
+  "keywords": [],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bahmutov/cy-intercept-example/issues"
+  },
+  "homepage": "https://github.com/bahmutov/cy-intercept-example#readme",
+  "devDependencies": {
+    "cypress": "6.0.0"
+  }
+}
