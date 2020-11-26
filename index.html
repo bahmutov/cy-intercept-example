@@ -3,6 +3,14 @@
 <head>
   <title>intercept</title>
   <link rel="stylesheet" href="styles.css" />
+  <!-- comment out fetch polyfill to stop cy.route from working -->
+  <!--
+  <script>
+    // use XHR polyfill instead
+    delete window.fetch
+  </script>
+  <script src="node_modules/whatwg-fetch/dist/fetch.umd.js"></script>
+  -->
 </head>
 <body>
   <h2>Users</h2>
