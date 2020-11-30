@@ -34,4 +34,24 @@ describe('intercept', () => {
     cy.get('#load-users').click()
     cy.wait('@users')
   })
+
+  it('uses minimatch to intercept (2)', () => {
+    // https://www.npmjs.com/package/minimatch
+    expect(
+      Cypress.minimatch(
+        'https://jsonplaceholder.cypress.io/users?_limit=3',
+        '**/users?_limit=+(3|5)'
+      )
+      , 'Minimatch test'
+    ).to.be.true
+    cy.intercept('**/users?_limit=+(3|5)').as('users')
+    cy.get('#load-users').click()
+    cy.wait('@users')
+  })
+
+  it('uses substring to intercept', () => {
+    cy.intercept('_limit=3').as('users')
+    cy.get('#load-users').click()
+    cy.wait('@users')
+  })
 })
