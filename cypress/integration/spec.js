@@ -28,4 +28,10 @@ describe('intercept', () => {
 
     cy.get('.user').should('have.length', 3)
   })
+
+  it('uses minimatch to intercept', () => {
+    cy.intercept('**/users?*').as('users')
+    cy.get('#load-users').click()
+    cy.wait('@users')
+  })
 })
