@@ -46,7 +46,11 @@ describe('intercept', () => {
     ).to.be.true
     cy.intercept('**/users?_limit=+(3|5)').as('users')
     cy.get('#load-users').click()
-    cy.wait('@users')
+    cy.wait('@users').its('response.body').should('have.length', 3)
+
+    // intercepts _limit=5 requests
+    cy.get('#load-five-users').click()
+    cy.wait('@users').its('response.body').should('have.length', 5)
   })
 
   it('uses substring to intercept', () => {
